@@ -1,0 +1,26 @@
+{
+  "name": "graphql-tutorial",
+  "version": "1.0.0",
+  "description": "Seguindo o tutorial https://dev.to/azure/learn-how-you-can-build-a-serverless-graphql-api-on-top-of-a-microservice-architecture-233g",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/led479/GraphQLTutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/led479/GraphQLTutorial/issues"
+  },
+  "homepage": "https://github.com/led479/GraphQLTutorial#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "graphql": "^14.3.1",
+    "node-fetch": "^2.6.0"
+  }
+}
