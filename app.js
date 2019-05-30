@@ -1,29 +1,25 @@
-const { graphql } = require('graphql')
-const rawSchema = require('./schema')
 require('dotenv').config()
+const express = require('express')
+const app = express()
+const port = 3000
+var graphqlHTTP = require("express-graphql")
+const schema = require("./schema")
 
-const query = `
-{ 
-  products {
-    name,
-    description 
-  }
-  reviews {
-    title,
-    comment,
-    grade,
-    product {
-      name,
-      description
-    }
-  }
-}`
+// var root = {
+//   hello: () => {
+//     return "Hello world!";
+//   },
+//   products: () => {
+//     return getProducts();
+//   }
+// };
 
-graphql({
-  schema: rawSchema,
-  source: query
-}).then(result => {
-  console.log('result', result)
-  console.log('products', result.data.products)
-  console.log('reviews', result.data.reviews)
-})
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema: schema,
+    graphiql: true
+  })
+)
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
